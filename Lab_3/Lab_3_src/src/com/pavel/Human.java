@@ -21,14 +21,7 @@ class Human implements IHuman, IStandardFunc {
 
     @Override
     public String toString() {
-        try {
-            if (place==null) throw new ExistException();
-        } catch (ExistException e) {
-            e.printStackTrace();
-            place = new Place("неизвестно");
-        } finally {
-            return Name + " находится на месте: " + place.getPlace();
-        }
+        return Name + " находится на месте: " + place.getPlace();
     }
 
     void useSkill(String p) {
