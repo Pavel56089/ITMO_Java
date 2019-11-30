@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println();
         Human ChristoferRobin = new Human("Кристофер");
-        Animal BearPuh = new Animal("Винни Пух");
-        Animal Pyatochok = new Animal("Пяточок");
-        Animal Slonopotam = new Animal("Слонопотам");
+        Animal BearPuh = new Animal("Винни Пух", "медведь");
+        Animal Pyatochok = new Animal("Пяточок", "свинья");
+        Animal Slonopotam = new Animal("Слонопотам", "слон");
         Thing pot = new Thing("горшок");
         Thing root = new Thing("корень");
         Place house = new Place("дом Пяточка");
@@ -21,8 +21,8 @@ public class Main {
         Pyatochok.useSkill("понял, каким он был глупым");
         Pyatochok.walk(house);
         Pyatochok.sleep();
-        Pyatochok.decide("убежать из дому");
-        Pyatochok.decide("стать моряком");
+        Pyatochok.decide(Ideas.GoHome);
+        Pyatochok.decide(Ideas.Sea);
 
     }
 }

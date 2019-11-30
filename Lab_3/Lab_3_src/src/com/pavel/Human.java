@@ -42,8 +42,8 @@ class Human implements IHuman, IStandardFunc {
         System.out.println(Name + " лег в постель и поспал");
     }
 
-    public void decide(String p){
-        System.out.println(Name + " решил " + p);
+    public void decide(Ideas p){
+        System.out.println(Name + " решил " + p.toString());
     }
 
     public void hit(Thing p){
