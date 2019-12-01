@@ -3,6 +3,7 @@ class Animal extends Human {
     private String Type;
     Animal(String n, String type) {
         super(n);
+
         Type = type;
     }
 
@@ -14,6 +15,11 @@ class Animal extends Human {
     @Override
     public String toString() {
         return (super.toString() + Type);
+    }
+
+    @Override
+    public String getName() {
+        return (super.getName() + " " + Type);
     }
 
 

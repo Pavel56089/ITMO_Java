@@ -6,8 +6,10 @@ public class Main {
         System.out.println();
         Human ChristoferRobin = new Human("Кристофер");
         Animal BearPuh = new Animal("Винни Пух", "медведь");
+        HeadOfAnimal HeadOfPuh = new HeadOfAnimal(BearPuh);
         Animal Pyatochok = new Animal("Пяточок", "свинья");
         Animal Slonopotam = new Animal("Слонопотам", "слон");
+        HeadOfAnimal HeadOfSlonopotam = new HeadOfAnimal(Slonopotam);
         Thing pot = new Thing("горшок");
         Thing root = new Thing("корень");
         Place house = new Place("дом Пяточка");
@@ -15,14 +17,15 @@ public class Main {
         for(int i =0; i<3;i++){
             ChristoferRobin.useSkill("хохотал");
         }
-        Slonopotam.hit(root);
-        BearPuh.appear();
+        HeadOfSlonopotam.hit(root);
+        HeadOfPuh.appear();
         pot.remove();
         Pyatochok.useSkill("понял, каким он был глупым");
         Pyatochok.walk(house);
-        Pyatochok.sleep();
+        Pyatochok.sleepWithPain();
         Pyatochok.decide(Ideas.GoHome);
         Pyatochok.decide(Ideas.Sea);
+        ChristoferRobin.equals(new Integer(1));
 
     }
 }

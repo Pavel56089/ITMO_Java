@@ -1,7 +1,7 @@
 package com.pavel;
-import javax.lang.model.element.Name;
 
-class Human implements IHuman, IStandardFunc {
+
+class Human implements WalkingHuman, StdFunctional {
     private String Name;
     APlace place;
     Human(String n) {
@@ -15,8 +15,7 @@ class Human implements IHuman, IStandardFunc {
 
     @Override
     public boolean equals(Object obj) {
-        boolean comp = obj.hashCode()== this.hashCode() ? true : false;
-        return comp;
+        return obj.hashCode() == this.hashCode();
     }
 
     @Override
@@ -28,29 +27,23 @@ class Human implements IHuman, IStandardFunc {
         System.out.println(Name + " " + p);
     }
 
-    void appear(){
-        System.out.println(Name + " появился ");
-    }
 
 
-    public void walk(APlace h){
-        place = h;
+    public void walk(APlace plc){
+        place = plc;
         System.out.println(Name + " стремглав помчался на место: " + place.getPlace());
     }
 
-    public void sleep(){
-        System.out.println(Name + " лег в постель и поспал");
+    public void sleepWithPain(){
+        System.out.println(Name + " лег в постель с головной болью и поспал");
     }
 
     public void decide(Ideas p){
         System.out.println(Name + " решил " + p.toString());
     }
 
-    public void hit(Thing p){
-        System.out.println(Name + " ударился о " + p.getType());
-    }
-
     public String getName(){
-        return Name;
+        return Name + this.hashCode();
+
     }
 }
