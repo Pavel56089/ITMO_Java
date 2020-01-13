@@ -32,7 +32,7 @@ class Human implements WalkingHuman, StdFunctional {
 
     @Override
     public void walk(Place plc)  throws SamePlaceException {
-        if (place.equals(plc)){
+        if (place == plc){
             throw new SamePlaceException("Нельзя переместиться в то же место", plc.getPlace());
         }else{
             place = plc;

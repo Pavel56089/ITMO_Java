@@ -8,8 +8,8 @@ public class NameLengthExeption extends RuntimeException {
 
     }
 
-    public NameLengthExeption(String msg, String name){
-        super (msg);
+    public NameLengthExeption(String name){
+        super ("Длинна имени больше 10 символов");
         this.name = name;
     }
 

@@ -1,10 +1,17 @@
 package com.pavel;
 import java.nio.charset.StandardCharsets;
+
+import exceptions.NameLengthExeption;
 import exceptions.SamePlaceException;
 public class Main {
     public static void main(String[] args) {
         System.out.println();
         Human ChristoferRobin = new Human("Кристофер");
+//        try{
+//            Animal murmurka = new Animal("мурмурмурмурмурмур", "кошак");
+//        }catch (NameLengthExeption e) {
+//            e.printStackTrace();
+//        }
         Animal bearPuh = new Animal("Винни Пух", "медведь");
         Animal.HeadOfAnimal HeadOfPuh = bearPuh.new HeadOfAnimal();
         Animal pyatochok = new Animal("Пяточок", "свинья");
@@ -18,11 +25,13 @@ public class Main {
         Place homeOfCristopher = new Place("дом Кристофера Робина");
         pyatochok.useSkill("думал о Слонопотаме");
         pyatochok.decide(Ideas.Go6Sosnam);
-        try {
-            pyatochok.walk(zapadnya);
-        } catch (SamePlaceException e) {
-            e.printStackTrace();
-        }
+
+//        try {
+//            pyatochok.walk(zapadnya);
+//            pyatochok.walk(zapadnya);
+//        } catch (SamePlaceException e) {
+//            e.printStackTrace();
+//        }
         bearPuh.useHeadAndItem(" не мог  вытащить голову из ", pot);
         bearPuh.useSkill(" кричал: \"Мама!\", кричал: \"Помогите!\", кричал и просто: \"Ай-ай-ай");
         bearPuh.useItem(pot, "пытался стукнуть обо что-нибудь");
@@ -60,7 +69,15 @@ public class Main {
         pyatochok.sleepWithPain();
         pyatochok.decide(Ideas.GoHome);
         pyatochok.decide(Ideas.Sea);
+        StoryTelling defaultStoryTeller = new StoryTelling() {
+            @Override
+            public void sayEnd() {
+                System.out.println("Вот и сказке конец");
+            }
+        };
+        defaultStoryTeller.sayEnd();
         animDesc.getArticle();
+
 
     }
 }

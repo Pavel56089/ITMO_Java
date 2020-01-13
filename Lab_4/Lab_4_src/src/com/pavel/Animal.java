@@ -1,11 +1,23 @@
 package com.pavel;
+
+import exceptions.NameLengthExeption;
+
 class Animal extends Human {
     private String Type;
     private String Name;
-    Animal(String n, String type) {
+    Animal(String n, String type) throws NameLengthExeption {
         super(n);
+        if (n.length() > 10){
+            throw new NameLengthExeption();
+        }
         Name = n;
         Type = type;
+        class NewAnimalInformator{
+            NewAnimalInformator(){
+                System.out.println("Создано новое животное на белом свете "+ Name);
+            }
+        }
+        NewAnimalInformator it = new NewAnimalInformator();
     }
 
     public void useHeadAndItem(String method, Thing thng){
