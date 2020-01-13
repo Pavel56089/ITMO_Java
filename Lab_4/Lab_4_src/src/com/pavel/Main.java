@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import exceptions.NameLengthExeption;
 import exceptions.SamePlaceException;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SamePlaceException {
         System.out.println();
         Human ChristoferRobin = new Human("Кристофер");
 //        try{
@@ -15,13 +15,16 @@ public class Main {
         Animal bearPuh = new Animal("Винни Пух", "медведь");
         Animal.HeadOfAnimal HeadOfPuh = bearPuh.new HeadOfAnimal();
         Animal pyatochok = new Animal("Пяточок", "свинья");
+        Animal iaIa = new Animal("Иа-иа", "осел");
         Animal slonopotam = new Animal("Слонопотам", "чудище");
         Animal.HeadOfAnimal HeadOfSlonopotam = slonopotam.new HeadOfAnimal();
         Animal.Description animDesc = new Animal.Description();
         Thing pot = new Thing("горшок");
         Thing root = new Thing("корень");
+        Thing stone = new Thing("Большой камень");
         Place house = new Place("дом Пяточка");
         Place zapadnya = new Place("6 сосен, западня");
+        Place downriver = new Place("вниз по течению");
         Place homeOfCristopher = new Place("дом Кристофера Робина");
         pyatochok.useSkill("думал о Слонопотаме");
         pyatochok.decide(Ideas.Go6Sosnam);
@@ -69,6 +72,15 @@ public class Main {
         pyatochok.sleepWithPain();
         pyatochok.decide(Ideas.GoHome);
         pyatochok.decide(Ideas.Sea);
+        ChristoferRobin.useSkill("отправился завтракать");
+        bearPuh.useSkill("отправился завтракать");
+        iaIa.useSkill("стоял на берегу ручья и понуро смотрел в воду на свое отражение");
+        iaIa.walk(downriver);
+        iaIa.useSkill("Пройдя метров двадцать, он перешел ручей вброд и так же медленно побрел обратно по другому берегу. ");
+        iaIa.useSkill("остановился и снова посмотрел в воду");
+        bearPuh.useSkill("появился");
+        bearPuh.useItem(stone,"уселся");
+        bearPuh.useSkill("запел загадочную песенку: ПРО СОРОК ПЯТОК Промолвил Носорог,-- Что лучше-- сорок пяток Или пяток сорок?-- Увы, никто на это");
         StoryTelling defaultStoryTeller = new StoryTelling() {
             @Override
             public void sayEnd() {
