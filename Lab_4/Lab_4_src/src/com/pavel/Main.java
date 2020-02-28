@@ -24,7 +24,8 @@ public class Main {
         Thing stone = new Thing("Большой камень");
         Place house = new Place("дом Пяточка");
         Place zapadnya = new Place("6 сосен, западня");
-        Place downriver = new Place("вниз по течению");
+            zapadnya.equals(null)
+;        Place downriver = new Place("вниз по течению");
         Place homeOfCristopher = new Place("дом Кристофера Робина");
         pyatochok.useSkill("думал о Слонопотаме");
         pyatochok.decide(Ideas.Go6Sosnam);
@@ -89,7 +90,6 @@ public class Main {
         };
         defaultStoryTeller.sayEnd();
         animDesc.getArticle();
-
 
     }
 }

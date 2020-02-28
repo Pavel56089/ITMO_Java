@@ -16,8 +16,14 @@ class Human implements WalkingHuman, StdFunctional {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return obj.hashCode() == this.hashCode();
+    public boolean equals(Object obj){
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }else{
+            boolean comp = (obj.hashCode() == this.hashCode());
+            return comp;
+        }
+
     }
 
     @Override

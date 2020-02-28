@@ -16,7 +16,12 @@ public class Place extends APlace {
 
     @Override
     public boolean equals(Object obj) {
-        boolean comp = obj.hashCode()== this.hashCode() ? true : false;
-        return comp;
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }else{
+            boolean comp = (obj.hashCode() == this.hashCode());
+            return comp;
+        }
+
     }
 }
